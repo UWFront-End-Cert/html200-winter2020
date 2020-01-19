@@ -1,0 +1,16 @@
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+let e = 5;
+d++;
+e--;
+let f = d;
+let g = e;
+console.log(a + b);
+console.log(b - a);
+console.log(c * c);
+console.log(d / b);
+console.log(c % b);
+console.log(f - b);
+console.log(g - a);
