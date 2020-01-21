@@ -5,10 +5,10 @@ const couldbe = 2;
 const maybe = 4 * 10;
 console.log(couldbe + maybe);
 
-const dontknow = 7;
-const notsure = 2 + 4;
+const dontknow = 7 + 5;
+const notsure = 2 * 3;
 const okayyes = notsure * 5;
-console.log(dontknow * notsure);
+console.log(dontknow + okayyes);
 
 const again = 8 * 9;
 const yup = - 30;
