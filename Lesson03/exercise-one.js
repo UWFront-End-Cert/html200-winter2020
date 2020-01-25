@@ -11,7 +11,7 @@ archerCast.push('Woodhouse');
 console.log(archerCast);
 
 let mother = archerCast.splice(2, 1);
-console.log(mother);
+console.log(`The third element is: ${mother}`);
 
 let fullArcherCast = archerCast.join(', ');
 console.log(fullArcherCast);
