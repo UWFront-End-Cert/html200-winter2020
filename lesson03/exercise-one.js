@@ -5,7 +5,7 @@ states.push('Montana');
 console.log(states);
 
 //Remove the third element
-states.splice('3', '1');
+states.splice('2', '1');
 console.log(states);
 
 //Create a string from the elements and comma-separate them
