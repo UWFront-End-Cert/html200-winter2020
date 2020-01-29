@@ -5,12 +5,20 @@ If they are old enough to drive it should console log the first name and last na
 
 const firstName = 'Taylor';
 const lastName = 'Sommers';
-let driverAge = '27';
-const legalDriveAge ='16';
+let driverAge = 27;
+const legalDriveAge =16;
+const drivingTime = driverAge - legalDriveAge;
 
+//check to see if I am legal to driver
+// if I am, print Taylor Sommers can drive and has been driving for X years
 
 if (driverAge >= legalDriveAge) {
-  console.log(firstName + ' ' + lastName);
+  console.log(firstName + ' ' + lastName + ' ' + 'can drive and has driven for'  + drivingTime + ' years');
+
+
+// if I am not legal to drive, console log down from 5
+
 } else {
-  console.log('you cannot drive yet');
+  for (let i = 5; i > 0; i--) {
+  console.log(i);
 }
