@@ -1,6 +1,6 @@
 let firstName = 'Jennifer ';
 let lastName = 'Lee ';
-let age = 15;
+let age = 37;
 let i = 16;
 
 if (age >= i) {
