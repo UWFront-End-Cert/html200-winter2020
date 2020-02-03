@@ -1,19 +1,18 @@
 //list of five-ALIVE!!
-cont disco = ['boy', 'you', 'should', 'dancing'];
+const disco = ['boy', 'you', 'should', 'be', 'dancing'];
 console.log(disco);
 
 //adding PIZAZZ!
-const dicso = ['boy', 'you', 'should', 'be', 'dancing'];
-disco.push('yeah');
+const disco = ['boy', 'you', 'should', 'be', 'dancing'];
+disco.push('YEAH!');
 console.log(disco);
 
 //taking out the 3rd element - to go dancing!!
-const disco = ['boy', 'you', 'should', 'be', 'dancing'];
-disco.splice(2,1);
+const disco = ['boy', 'you', 'should', 'be', 'dancing', 'YEAH!'];
+disco.splice(0,1);
 console.log(disco);
 
 //adding a string - section to my song!
 const disco = ['my-Woman-Takes-', 'MyWomanKeepsMeWarm'];
-const saturdayNightFever = disco-join('me-HIGHER-');
-console.log(disco);
+const saturdayNightFever = disco.join('me-HIGHER-');
 console.log(saturdayNightFever);
