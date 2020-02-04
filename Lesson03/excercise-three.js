@@ -1,4 +1,4 @@
-let planets = ['1,Mercury', '2,Venus', '3,Earth', '4,Mars', '5,Jupiter'];
+let planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter'];
 for (let i = 0; i < planets.length; i++) {
-  console.log(planets[i]);
+  console.log((i + 1) + "," + planets[i]);
 }
