@@ -11,7 +11,6 @@ The user will see their balance. Afterwards, they should be able to type another
 The program will loop asking for input until the user enters Q.
 */
 
-//create account object with acctBalance as property?
 function promptEnterCode() {
     let answer = prompt('Enter one of the following codes: Q, W, B, or D');
     return(answer);
@@ -28,14 +27,40 @@ function handleAction() {
             switch(input) {
                 case 'W':
                     let amtWithdraw = prompt('How much would you like to withdraw?');
-                    accountBalance -= Number(amtWithdraw);
-                    input = promptEnterCode();
-                    break;
+                    // check to see how amtWithdraw will affect accountBalance
+                    let preAccountBalance = accountBalance - Number(amtWithdraw); 
+                    if (preAccountBalance < 0) {
+                        alert(`Overdraft warning! You do not have enough to withdraw $${amtWithdraw}`)
+                        input = promptEnterCode();
+                        break;
+                    } else if (preAccountBalance >= 0 && preAccountBalance < 300) {
+                        alert(`You will have less than $300 after withdrawing $${amtWithdraw}`);
+                        let continueWithdraw = prompt('Are you sure you want to proceed with the withdrawl? Enter Y for yes or N for no--return to main prompt.');
+                        if (continueWithdraw === 'Y') {
+                            accountBalance -= Number(amtWithdraw);
+                            input = promptEnterCode();
+                            break;
+                        } else {
+                            input = promptEnterCode();
+                            break;
+                        }
+                    } else {
+                        accountBalance -= Number(amtWithdraw);
+                        input = promptEnterCode();
+                        break;
+                    }
                 case 'D':
                     let amtDeposit = prompt('How much would you like to deposit?');
-                    accountBalance += Number(amtDeposit);
-                    input =  promptEnterCode();
-                    break;
+                    // check to make sure amtDeposit is less that the cap
+                    if (amtDeposit > 50000) {
+                        alert("Woah! Where'd this money come from? The deposit cap is $50,000. Try a smaller amount.");
+                        input = 'D';
+                        break;
+                    } else {
+                        accountBalance += Number(amtDeposit);
+                        input =  promptEnterCode();
+                        break;
+                    }
                 case 'B':
                     alert(`You have a balance of $${accountBalance}`);
                     input =  promptEnterCode();
@@ -46,11 +71,11 @@ function handleAction() {
                     break;
             }
         } else if (i === 0 && input === 'Q') {
-            alert('You selected Quit. Goodbye');
+            alert("You've chosen to logout of your account. Goodbye");
             i = -1;
             break;
         } else {
-            alert('You selected Quit. Goodbye');
+            alert("You've chosen to logout of your account. Goodbye");
             i *= -1;
             break;
         }
