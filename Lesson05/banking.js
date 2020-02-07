@@ -11,21 +11,32 @@ The user will see their balance. Afterwards, they should be able to type another
 The program will loop asking for input until the user enters Q.
 */
 
-//create account object with acctBalance as property
+//create account object with acctBalance as property?
 let accountBalance = 1000;
-let i = 0;
-let input = prompt('Enter one of the following: Q, W, D, B', ' ');
-i = i + 1;
+let input = prompt('Enter your code');
 
-for (i > 0; i++;) {
-    switch(input) {
-        case 'Q':
-            alert('Your session is closed. Goodbye.');
-            i = 0;
-            break;
-        case 'B':
-            alert(`Your account balance is: ${accountBalance}`);
-            input = prompt('Enter one of the following: Q, W, D, B', ' ');  
+for (let i = 0; i >= 0; i++) {
+    if (i >= 0 && input !== 'Q') {
+        switch(input) {
+            case 'W':
+                input = prompt('Enter your code');
+                break;
+            case 'B':
+                input =  prompt('Enter your code');
+                break;
+            default:
+                input =  prompt('Enter your code');
+                break;
+        }
+    } else if (i === 0 && input === 'Q') {
+        alert('Goodbye');
+        i = -1;
+        alert(`${i}`);
+        break;
+    } else {
+        i *= -1;
+        alert(`${i}`);
+        break;
     }
 }
 
