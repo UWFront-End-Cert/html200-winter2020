@@ -4,6 +4,9 @@
 html {
     font-size: 16px;
 }
+h1 {
+    font-size: 2rem;
+}
 body {
     font-family: var(--primaryFont);
 }
@@ -13,7 +16,16 @@ main {
     align-items: center;
 }
 article {
-    margin: 20rem auto;
+    margin: 15rem auto;
+}
+section {
+    text-align: center;
+}
+button {
+    padding: 1% 3%;
+    border-radius: 2px;
+    font-family: var(--primaryFont);
+    font-size: 1rem;
 }
 
 

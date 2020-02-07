@@ -16,41 +16,47 @@ function promptEnterCode() {
     let answer = prompt('Enter one of the following codes: Q, W, B, or D');
     return(answer);
 }
-let accountBalance = 1000;
-let input = promptEnterCode();
 
-for (let i = 0; i >= 0; i++) {
-    if (i >= 0 && input !== 'Q') {
-        switch(input) {
-            case 'W':
-                let amtWithdraw = prompt('How much would you like to withdraw?');
-                accountBalance -= Number(amtWithdraw);
-                input = promptEnterCode();
-                break;
-            case 'D':
-                let amtDeposit = prompt('How much would you like to deposit?');
-                accountBalance += Number(amtDeposit);
-                input =  promptEnterCode();
-                break;
-            case 'B':
-                alert(`You have a balance of $${accountBalance}`);
-                input =  promptEnterCode();
-                break;
-            default:
-                alert(`We're sorry, we couldn't understand your option. Please try again.`)
-                input =  promptEnterCode();
-                break;
+let accountBalance = 1000;
+let input = null;
+
+function handleAction() {
+    input = promptEnterCode();
+
+    for (let i = 0; i >= 0; i++) {
+        if (i >= 0 && input !== 'Q') {
+            switch(input) {
+                case 'W':
+                    let amtWithdraw = prompt('How much would you like to withdraw?');
+                    accountBalance -= Number(amtWithdraw);
+                    input = promptEnterCode();
+                    break;
+                case 'D':
+                    let amtDeposit = prompt('How much would you like to deposit?');
+                    accountBalance += Number(amtDeposit);
+                    input =  promptEnterCode();
+                    break;
+                case 'B':
+                    alert(`You have a balance of $${accountBalance}`);
+                    input =  promptEnterCode();
+                    break;
+                default:
+                    alert(`We're sorry, we couldn't understand your option. Please try again.`)
+                    input =  promptEnterCode();
+                    break;
+            }
+        } else if (i === 0 && input === 'Q') {
+            alert('You selected Quit. Goodbye');
+            i = -1;
+            break;
+        } else {
+            alert('You selected Quit. Goodbye');
+            i *= -1;
+            break;
         }
-    } else if (i === 0 && input === 'Q') {
-        alert('Goodbye');
-        i = -1;
-        break;
-    } else {
-        alert('Goodbye');
-        i *= -1;
-        break;
     }
 }
+
 
 
 
