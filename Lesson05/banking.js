@@ -12,30 +12,42 @@ The program will loop asking for input until the user enters Q.
 */
 
 //create account object with acctBalance as property?
+function promptEnterCode() {
+    let answer = prompt('Enter one of the following codes: Q, W, B, or D');
+    return(answer);
+}
 let accountBalance = 1000;
-let input = prompt('Enter your code');
+let input = promptEnterCode();
 
 for (let i = 0; i >= 0; i++) {
     if (i >= 0 && input !== 'Q') {
         switch(input) {
             case 'W':
-                input = prompt('Enter your code');
+                let amtWithdraw = prompt('How much would you like to withdraw?');
+                accountBalance -= Number(amtWithdraw);
+                input = promptEnterCode();
+                break;
+            case 'D':
+                let amtDeposit = prompt('How much would you like to deposit?');
+                accountBalance += Number(amtDeposit);
+                input =  promptEnterCode();
                 break;
             case 'B':
-                input =  prompt('Enter your code');
+                alert(`You have a balance of $${accountBalance}`);
+                input =  promptEnterCode();
                 break;
             default:
-                input =  prompt('Enter your code');
+                alert(`We're sorry, we couldn't understand your option. Please try again.`)
+                input =  promptEnterCode();
                 break;
         }
     } else if (i === 0 && input === 'Q') {
         alert('Goodbye');
         i = -1;
-        alert(`${i}`);
         break;
     } else {
+        alert('Goodbye');
         i *= -1;
-        alert(`${i}`);
         break;
     }
 }
