@@ -30,12 +30,13 @@ function handleAction() {
                     // check to see how amtWithdraw will affect accountBalance
                     let preAccountBalance = accountBalance - Number(amtWithdraw); 
                     if (preAccountBalance < 0) {
-                        alert(`Overdraft warning! You do not have enough to withdraw $${amtWithdraw}`)
+                        alert(`Overdraft warning! Your withdrawal cannot be greater than $${accountBalance}.`);
                         input = promptEnterCode();
                         break;
                     } else if (preAccountBalance >= 0 && preAccountBalance < 300) {
                         alert(`You will have less than $300 after withdrawing $${amtWithdraw}`);
-                        let continueWithdraw = prompt('Are you sure you want to proceed with the withdrawl? Enter Y for yes or N for no--return to main prompt.');
+                        alert(`Just a friendly reminder that your withdrawal cannot be greater than $${accountBalance}.`);
+                        let continueWithdraw = prompt('Are you sure you want to proceed with the withdrawal? Enter Y for yes or N for no--return to main prompt.');
                         if (continueWithdraw === 'Y') {
                             accountBalance -= Number(amtWithdraw);
                             input = promptEnterCode();

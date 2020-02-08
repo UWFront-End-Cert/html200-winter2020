@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 :root {
     --primaryFont: 'Nunito Sans', sans-serif;
 }
@@ -5,7 +8,7 @@ html {
     font-size: 16px;
 }
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 body {
     font-family: var(--primaryFont);
@@ -16,14 +19,15 @@ main {
     align-items: center;
 }
 article {
-    margin: 15rem auto;
+    margin: 12rem auto;  
 }
 section {
     text-align: center;
+    padding-bottom: 1.5rem;
 }
 button {
     padding: 1% 3%;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: var(--primaryFont);
     font-size: 1rem;
 }
