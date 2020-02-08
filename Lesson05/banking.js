@@ -67,16 +67,16 @@ function handleAction() {
                     input =  promptEnterCode();
                     break;
                 default:
-                    alert(`We're sorry, we couldn't understand your option. Please try again.`)
+                    alert(`We're sorry, we didn't understand that option. Please try again.`)
                     input =  promptEnterCode();
                     break;
             }
         } else if (i === 0 && input === 'Q') {
-            alert("You've chosen to logout of your account. Goodbye");
+            alert("You've chosen to end your session. Goodbye");
             i = -1;
             break;
         } else {
-            alert("You've chosen to logout of your account. Goodbye");
+            alert("You've chosen to end your session. Goodbye");
             i *= -1;
             break;
         }
