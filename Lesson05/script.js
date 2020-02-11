@@ -13,9 +13,10 @@
 // program will loop asking for input until user enters Q to quit
 
 
+let balance = 1000;
+
 function bankApp(actions) {
   const input = prompt(actions);
-  let balance = Number(1000);
 
   switch (input) {
     case 'Q':
@@ -26,15 +27,24 @@ function bankApp(actions) {
       balance -= Number(withdrawNum);
 
       alert('Current balance: ' + '$' + balance);
+      do {
+        bankApp(actions);
+      } while (input = 'W' || 'D' || 'B');
       break;
     case 'D':
       let depositNum = prompt('Enter an amount to deposit:');
       balance += Number(depositNum);
 
       alert('Current balance: ' + '$' + balance);
+      do {
+        bankApp(actions);
+      } while (input = 'W' || 'D' || 'B');
       break;
     case 'B':
       alert('Current balance: ' + '$' + balance);
+      do {
+        bankApp(actions);
+      } while (input = 'W' || 'D' || 'B');
       break;
   }
 }
