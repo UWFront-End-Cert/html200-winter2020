@@ -1,6 +1,8 @@
 let action = "";
 let bal = 1000;
 let run = true;
+let amount = 0;
+let funds = 0;
 
 function banking() {
     let wit = 0;
@@ -12,14 +14,14 @@ function banking() {
             run = false;
         } else if (action == 'w') {
             wit = prompt('Great, you want to withdraw some funds. How much?'); 
-            withdraw(wit)
+            withdraw(wit);
         } else if (action == 'd') {
             dep = prompt('Nice, you want to deposit some funds. How much?');
-            deposit(dep)
+            deposit(dep);
         } else if (action == 'b') {
-            alert('Your balance is $' + bal)
-        };
-    }
+            alert('Your balance is $' + bal);
+        }
+    };
     run = true;
 }
 
@@ -27,15 +29,16 @@ function withdraw(amount) {
     if (amount > bal) {
         alert("You don't have enough funds to do that.");
     } else {
-        bal = bal - amount;
-        prompt("You're new balance is $" + bal);
-    }
+        bal = (Number(bal) - Number(amount));
+        alert("You're new balance is $" + bal);
+    } 
 }
 
 function deposit(funds) {
     if (funds > 50000) {
         alert("You cannot deposit more than $50,000 at a time");
     } else { 
-        bal = dep + bal;
+        bal = (Number(bal) + Number(funds));
+        alert("You're new balance is $" + bal);
     }
 }
