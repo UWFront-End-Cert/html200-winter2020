@@ -16,11 +16,9 @@ function promptEnterCode() {
     return(answer);
 }
 
-let accountBalance = 1000;
-let input = null;
-
 function handleAction() {
-    input = promptEnterCode();
+    let accountBalance = 1000;
+    let input = promptEnterCode();
 
     for (let i = 0; i >= 0; i++) {
         if (i >= 0 && input !== 'Q') {
@@ -73,11 +71,9 @@ function handleAction() {
             }
         } else if (i === 0 && input === 'Q') {
             alert("You've chosen to end your session. Goodbye");
-            i = -1;
             break;
         } else {
             alert("You've chosen to end your session. Goodbye");
-            i *= -1;
             break;
         }
     }
