@@ -1,0 +1,57 @@
+<!--the Dewey, Cheetem and Howe Banking system - now more efficient than ever!! -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D, C and H Banks</title>
+  </head>
+  <body>
+    <h1>Dewey, Cheetem and Howe Money Banks</h1>
+    <h2>Give Us Your Money and You'll Get Your Fair Return</h2>
+      <p>Go ahead and make your selection (if you must)</p>
+      <p>Click the button to:
+      <ul>
+        <li>make a Withdraw (if you must)</li>
+        <li>give a Deposit (gimmie, gimmie, gimmie)</li>
+        <li>See your balance (lookit all them bananas!)</li>
+        <li>Or Quit (while you're ahead)</li>
+      </ul>
+      <button onclick = "bankAction()">Sucker!</button>
+      <p>Hello, Bankee, what would you like D,C and H Money Banks do to you today?</p>
+    <script>
+   for(let i = 0; i < 3; i++) {
+     let input = prompt('Enter Withdraw, Deposit, Balance or Quit');
+     let withdraw = withdrawing();
+     let deposit = depositing();
+     let balance = balancing();
+     let quit = 1;
+
+     if(i === quit) {break;}
+
+     result = Number(input);
+     }
+
+   function withdrawing() {
+     let input = prompt('Enter Withdraw amount below')
+     let totalBalance = 500;
+     let result = 0;
+
+    result = totalBalance - Number(input);
+    alert('Your new balance is now' + '$' + result);
+   }
+
+   function depositing() {
+     let input = prompt('Enter Deposit amount below')
+     let totalBalance = 500;
+     let result = 0;
+
+    result = totalBalance + Number(input);
+    alert('Your new balance is now' + '$' + result);
+   }
+
+   function balancing() {
+     alert('Your new balance is $500');
+   }
+    </script>
+  </body>
+</html>
