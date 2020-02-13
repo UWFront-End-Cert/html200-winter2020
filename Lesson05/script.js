@@ -43,6 +43,8 @@ alert(choice);
     let anotherChance = prompt('You do not have enough money. You are at risk of overdrawing and receiving an overdraft charge. Please enter another amount:');
     alert(newBalanceWithdrawal);
     alert(choice);
+  } else {
+    alert(choice);
   }
 
   function depositMoney() {
@@ -56,6 +58,8 @@ alert(choice);
         alert(choice);
       } else if (deposit <= 50000) {
         alert('You now have ' + Number(depositMoney) + 'in your account.');
+        alert(choice);
+      } else {
         alert(choice);
       }
 
