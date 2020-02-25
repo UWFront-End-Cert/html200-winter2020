@@ -1,13 +1,26 @@
-let result;
-let number1 = prompt("What is your first number?");
-let number2 = prompt("What is your second number?");
+let welcome = prompt('Select Quit, Withdraw, Deposit, or Balance');
 
-console.log(number1);
-console.log(number2);
+let bankOption = 'Select Quit, Withdraw, Deposit, or Balance';
 
-function square(number1, number2) {
-  result = number1 * number2;
+switch(welcome) {
+  case "Quit":
+    text = "Thank you for banking with us. GoodBye!";
+    alert(text);
+    break;
+  case "Balance":
+    total = 'Your balance is $500.'
+    alert(total);
+    prompt(bankOption);
+  case "Withdraw":
+    text = "How much would you like to withdraw?";
+    total = 'Your balance is $500.'
+    prompt(text);
+    alert(total);
+    prompt(bankOption);
+  case "Deposit":
+    text = 'How much would you like to deposit?';
+    total = 'Your balance is $500.'
+    prompt(text);
+    alert(total);
+    prompt(bankOption);
 }
-
-square(number1, number2);
-alert(result);
